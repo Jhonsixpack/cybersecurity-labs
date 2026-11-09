@@ -57,7 +57,7 @@ MAC Address: 3E:D2:54:47:26:C2 (Unknown)
 Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 ```
 # 2. Enumeración
-
+![Verificación de conectividad](evidencias/migración.png)
 ## 3. Análisis de vulnerabilidades
 
 ## 4. Explotación
