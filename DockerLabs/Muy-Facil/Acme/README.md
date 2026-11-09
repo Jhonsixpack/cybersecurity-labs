@@ -15,6 +15,7 @@
 
 ## Verificación de conectividad
 
+```
 ┌──(kali㉿kali)-[~/Documentos/DOCKER-LABS/acme]
 └─$ ping 172.17.0.2
 PING 172.17.0.2 (172.17.0.2) 56(84) bytes of data.
@@ -31,6 +32,7 @@ PING 172.17.0.2 (172.17.0.2) 56(84) bytes of data.
 --- 172.17.0.2 ping statistics ---
 9 packets transmitted, 9 received, 0% packet loss, time 8176ms
 rtt min/avg/max/mdev = 0.041/0.049/0.073/0.009 ms
+```
 
 ## 1. Reconocimiento
 
