@@ -1,5 +1,10 @@
 # Upload - DockerLabs
 
+## Creada por: mikisbd
+
+##Información: 
+- Maquina con acceso fácil al ssh donde después deberás explorar los servicios web interno e intentar explotarlo
+
 ## Información general
 
 - Plataforma: DockerLabs
