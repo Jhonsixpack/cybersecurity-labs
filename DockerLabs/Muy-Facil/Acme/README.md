@@ -205,12 +205,34 @@ sudo -l
 **Explicación:**
 - sudo: permite ejecutar comandos con privilegios de otro usuario, normalmente root.
 - -l: muestra los permisos y comandos que el usuario tiene autorizados mediante sudo.
+
 **Resultado obtenido:**
   ```
   Sorry, user usuario may not run sudo
   ```
+
 Análisis: La cuenta usuario no tenía permisos para ejecutar comandos mediante sudo. Por lo tanto, fue necesario continuar enumerando el sistema para identificar otras posibles vías de escalada.
 
+### 5.3 Búsqueda de archivos con permisos SUID
+
+**Comando utilizado:**
+```
+find / -perm -4000 2>/dev/null
+```
+
+**Explicación de cada parte:**
+
+- find  --> Busca archivos y directorios.
+- /     --> Indica que la búsqueda comienza desde la raíz del sistema.
+- -perm --> Permite buscar archivos según sus permisos.
+- -4000 --> Busca archivos que tengan activado el bit SUID.
+- 2>    --> Redirige los mensajes de error.
+- /dev/null --> Descarta los mensajes de error para mostrar una salida más limpia.
+
+**Resultado obtenido:**
+
+
+Entre los archivos encontrados se identificó:
 
 ## 6. Evidencias
 
