@@ -193,6 +193,25 @@ Se consiguió establecer una sesión SSH y acceder a una terminal del sistema Ub
 **Análisis:**
 
 Se obtuvo acceso inicial al sistema con una cuenta de usuario sin privilegios de administrador. Este acceso permitirá continuar con la enumeración interna y buscar posibles vías de escalada de privilegios.
+
+### 5.2 Verificación de permisos sudo
+
+Después de obtener acceso inicial, comprobé si el usuario tenía permisos para ejecutar comandos con privilegios elevados.
+
+**Comando utilizado:**
+```
+sudo -l
+```
+**Explicación:**
+- sudo: permite ejecutar comandos con privilegios de otro usuario, normalmente root.
+- -l: muestra los permisos y comandos que el usuario tiene autorizados mediante sudo.
+**Resultado obtenido:**
+  ```
+  Sorry, user usuario may not run sudo
+  ```
+Análisis: La cuenta usuario no tenía permisos para ejecutar comandos mediante sudo. Por lo tanto, fue necesario continuar enumerando el sistema para identificar otras posibles vías de escalada.
+
+
 ## 6. Evidencias
 
 ## 7. Conocimientos adquiridos
