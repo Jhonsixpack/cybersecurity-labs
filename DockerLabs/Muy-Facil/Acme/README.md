@@ -36,11 +36,27 @@ rtt min/avg/max/mdev = 0.041/0.049/0.073/0.009 ms
 
 ## 1. Reconocimiento
 
-
-
-
-
-## 2. Enumeración
+- Comando usado
+```
+┌──(kali㉿kali)-[~/Documentos/DOCKER-LABS/acme]
+└─$ nmap -p- --open -sV -sC -n 172.17.0.2  
+```
+- Resultado
+```
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 8.9p1 Ubuntu 3ubuntu0.16 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   256 ae:8a:0a:ff:6e:ce:89:a3:31:d7:da:44:85:0d:f4:de (ECDSA)
+|_  256 3f:e8:fa:07:33:e8:43:0a:22:1d:6d:15:a6:53:04:7e (ED25519)
+80/tcp open  http    Apache httpd 2.4.52 ((Ubuntu))
+| http-robots.txt: 1 disallowed entry 
+|_/migration_notes.txt
+|_http-server-header: Apache/2.4.52 (Ubuntu)
+|_http-title: ACME Corporation - Portal en Mantenimiento
+MAC Address: 3E:D2:54:47:26:C2 (Unknown)
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+```
+# 2. Enumeración
 
 ## 3. Análisis de vulnerabilidades
 
