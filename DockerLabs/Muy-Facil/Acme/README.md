@@ -8,7 +8,9 @@
 ## Información general
 
 - Plataforma: DockerLabs
+
 ![Información general](evidencias/docker.png)
+
 - Dificultad: Muy fácil
 - Sistema operativo: Linux
 - Fecha: 09/11/2026
@@ -231,8 +233,15 @@ find / -perm -4000 2>/dev/null
 
 **Resultado obtenido:**
 
+![Escala de privilegios](evidencias/find.png)
 
-Entre los archivos encontrados se identificó:
+```
+/usr/bin/bash
+```
+**Análisis:** 
+
+El permiso SUID permite que un ejecutable se ejecute con el identificador efectivo del propietario del archivo. Cuando un ejecutable pertenece a root y tiene SUID, puede representar un riesgo si permite obtener una shell con privilegios elevados.
+
 
 ## 6. Evidencias
 
