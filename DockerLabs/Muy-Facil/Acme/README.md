@@ -140,9 +140,50 @@ Al revisar el código HTML se encontró un mensaje de mantenimiento que indicaba
 
 El contenido de la página proporcionó una pista importante para continuar con la enumeración del servicio SSH.
 ## 4. Explotación
+### 4.1 Obtención del banner de bienvenida
 
+Se intentó establecer una conexión SSH utilizando el usuario `root`.
+
+**Comando utilizado:**
+
+```bash
+ssh root@172.17.0.2
+```
+
+Aunque el acceso como root fue rechazado, el servidor mostró un banner de bienvenida con información relevante.
+
+**Información encontrada:**
+
+```text
+ACME Corporation - Nodo Bastion de Mantenimiento Interno
+
+Credenciales temporales asignadas para tareas de mantenimiento:
+
+Usuario: usuario
+Password: [REDACTADO]
+```
+
+**Análisis:**
+
+El banner SSH reveló la existencia de un usuario temporal destinado a tareas de mantenimiento. Esta información permitió identificar un posible usuario válido para realizar el acceso inicial.
 ## 5. Escalada de privilegios
+### 5.1 Conexión mediante SSH
 
+Se utilizó el usuario identificado en el banner para establecer una conexión remota.
+
+**Comando utilizado:**
+
+```bash
+ssh usuario@172.17.0.2
+```
+
+**Resultado:**
+
+Se consiguió establecer una sesión SSH y acceder a una terminal del sistema Ubuntu 22.04.5 LTS.
+
+**Análisis:**
+
+Se obtuvo acceso inicial al sistema con una cuenta de usuario sin privilegios de administrador. Este acceso permitirá continuar con la enumeración interna y buscar posibles vías de escalada de privilegios.
 ## 6. Evidencias
 
 ## 7. Conocimientos adquiridos
