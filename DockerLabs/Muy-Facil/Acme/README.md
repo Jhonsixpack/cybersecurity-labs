@@ -91,7 +91,54 @@ Además, Nmap identificó una entrada en el archivo robots.txt:
 Este recurso será considerado para la posterior enumeración web.
 
 ## 3. Análisis de vulnerabilidades
+### 3.1 Identificación de tecnologías web con WhatWeb
 
+Se utilizó WhatWeb para identificar las tecnologías y características del servidor web.
+
+**Comando utilizado:**
+
+```bash
+whatweb 172.17.0.2
+```
+
+**Resultado obtenido:**
+
+```text
+http://172.17.0.2 [200 OK]
+Apache[2.4.52]
+HTML5
+HTTPServer[Ubuntu Linux][Apache/2.4.52 (Ubuntu)]
+Title[ACME Corporation - Portal en Mantenimiento]
+UncommonHeaders[x-notice]
+```
+
+**Análisis:**
+
+Se confirmó que el servidor web utiliza Apache 2.4.52 sobre Ubuntu. La página respondió con el código HTTP 200 OK y mostró un título relacionado con el portal de ACME Corporation.
+
+También se identificó una cabecera HTTP poco común denominada `X-Notice`, que puede ser revisada posteriormente.
+
+### 3.2 Inspección del contenido web con Curl
+
+Se utilizó Curl para consultar el contenido HTML de la página principal.
+
+**Comando utilizado:**
+
+```bash
+curl http://172.17.0.2/
+```
+
+**Hallazgos importantes:**
+
+Al revisar el código HTML se encontró un mensaje de mantenimiento que indicaba lo siguiente:
+
+- El portal corporativo se encontraba fuera de línea por tareas de migración.
+- Las consolas de gestión eran accesibles exclusivamente mediante SSH.
+- Se recomendaba conectarse por SSH con cualquier usuario para consultar las notificaciones e instrucciones de acceso.
+
+**Análisis:**
+
+El contenido de la página proporcionó una pista importante para continuar con la enumeración del servicio SSH.
 ## 4. Explotación
 
 ## 5. Escalada de privilegios
