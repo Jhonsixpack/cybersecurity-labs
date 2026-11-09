@@ -57,7 +57,39 @@ MAC Address: 3E:D2:54:47:26:C2 (Unknown)
 Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 ```
 # 2. Enumeración
+### 2.1 Escaneo de puertos y servicios con Nmap
+
+Se realizó un escaneo de todos los puertos TCP para identificar aquellos que se encontraban abiertos, así como los servicios y versiones que estaban ejecutándose.
+
+**Comando utilizado:**
+
+```bash
+nmap -p- --open -sV -sC -n 172.17.0.2
+```
+
+**Resultados obtenidos:**
+
+```text
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 8.9p1 Ubuntu 3ubuntu0.16
+80/tcp open  http    Apache httpd 2.4.52 (Ubuntu)
+```
+
+**Análisis de resultados:**
+
+Se identificaron dos puertos abiertos:
+
+- **Puerto 22 (SSH):** ejecuta OpenSSH 8.9p1 sobre Ubuntu. Permite conexiones remotas mediante SSH.
+- **Puerto 80 (HTTP):** ejecuta Apache 2.4.52 sobre Ubuntu. Aloja un portal web corporativo en mantenimiento.
+
+Además, Nmap identificó una entrada en el archivo robots.txt:
+
+```text
+/migration_notes.txt
+```
 ![Verificación de conectividad](evidencias/migración.png)
+Este recurso será considerado para la posterior enumeración web.
+
 ## 3. Análisis de vulnerabilidades
 
 ## 4. Explotación
