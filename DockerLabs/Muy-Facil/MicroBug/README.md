@@ -1,5 +1,10 @@
 # MicroBug - DockerLabs
 
+# Descripción del Laboratorio:
+- Máquina Windows vulnerable por el puerto 445 SMB
+
+# Creada por: El Pingüino de Mario
+
 ## Información general
 
 - Plataforma: DockerLabs
