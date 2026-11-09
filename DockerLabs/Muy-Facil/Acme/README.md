@@ -8,6 +8,7 @@
 ## Información general
 
 - Plataforma: DockerLabs
+![Información general](evidencias/docker.png)
 - Dificultad: Muy fácil
 - Sistema operativo: Linux
 - Fecha: 09/11/2026
@@ -88,6 +89,7 @@ Además, Nmap identificó una entrada en el archivo robots.txt:
 /migration_notes.txt
 ```
 ![Verificación de conectividad](evidencias/migración.png)
+
 Este recurso será considerado para la posterior enumeración web.
 
 ## 3. Análisis de vulnerabilidades
@@ -136,9 +138,12 @@ Al revisar el código HTML se encontró un mensaje de mantenimiento que indicaba
 - Las consolas de gestión eran accesibles exclusivamente mediante SSH.
 - Se recomendaba conectarse por SSH con cualquier usuario para consultar las notificaciones e instrucciones de acceso.
 
+![Analisis de vulnerabilidades](evidencias/panel.png)
+
 **Análisis:**
 
 El contenido de la página proporcionó una pista importante para continuar con la enumeración del servicio SSH.
+
 ## 4. Explotación
 ### 4.1 Obtención del banner de bienvenida
 
@@ -177,9 +182,13 @@ Se utilizó el usuario identificado en el banner para establecer una conexión r
 ssh usuario@172.17.0.2
 ```
 
+![Escala de privilegios](evidencias/ssh.png)
+
 **Resultado:**
 
 Se consiguió establecer una sesión SSH y acceder a una terminal del sistema Ubuntu 22.04.5 LTS.
+
+
 
 **Análisis:**
 
