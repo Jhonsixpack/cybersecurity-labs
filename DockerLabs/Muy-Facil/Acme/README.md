@@ -255,6 +255,7 @@ Después de identificar el archivo Bash con permiso SUID, ejecuté:
 - -p: activa el modo privilegiado, conservando los identificadores de usuario efectivos y evitando que Bash descarte esos privilegios.
 
 **Resultado obtenido:**
+
 ![Escala de privilegios](evidencias/root.png)
 
 **Análisis:**
