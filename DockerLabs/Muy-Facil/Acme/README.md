@@ -212,6 +212,7 @@ sudo -l
   ```
   Sorry, user usuario may not run sudo
   ```
+![Escala de privilegios](evidencias/usuario.png)
 
 Análisis: La cuenta usuario no tenía permisos para ejecutar comandos mediante sudo. Por lo tanto, fue necesario continuar enumerando el sistema para identificar otras posibles vías de escalada.
 
