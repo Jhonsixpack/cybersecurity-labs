@@ -243,9 +243,42 @@ find / -perm -4000 2>/dev/null
 
 El permiso SUID permite que un ejecutable se ejecute con el identificador efectivo del propietario del archivo. Cuando un ejecutable pertenece a root y tiene SUID, puede representar un riesgo si permite obtener una shell con privilegios elevados.
 
+### 5.4 Obtención de una shell como root
+
+Después de identificar el archivo Bash con permiso SUID, ejecuté:
+```
+/bin/bash -p
+```
+
+**Explicación:**
+- /bin/bash: ejecuta el intérprete de comandos Bash.
+- -p: activa el modo privilegiado, conservando los identificadores de usuario efectivos y evitando que Bash descarte esos privilegios.
+
+**Resultado obtenido:**
+![Escala de privilegios](evidencias/root.png)
+
+**Análisis:**
+
+Se consiguió obtener una shell con privilegios de administrador mediante el ejecutable Bash que tenía activado el permiso SUID. Esto confirmó la escalada de privilegios en la máquina ACME.
 
 ## 6. Evidencias
+
+Una vez obtenidos los privilegios de root, comprobé nuevamente el contenido del directorio actual:
+![Escala de privilegios](evidencias/flag.png)
 
 ## 7. Conocimientos adquiridos
 
 ## 8. Conclusión
+* Se comprobó la conectividad con la máquina ACME mediante solicitudes ICMP.
+
+* Mediante Nmap se identificaron los servicios SSH y HTTP, junto con sus versiones.
+
+* La inspección del portal web permitió identificar SSH como el mecanismo de acceso al sistema.
+
+* El banner del servicio SSH proporcionó información sobre una cuenta de mantenimiento, lo que permitió conseguir el acceso inicial.
+
+* Durante la enumeración interna se comprobó que el usuario no tenía permisos sudo.
+
+* La búsqueda de archivos SUID permitió identificar el ejecutable Bash con permisos especiales.
+
+* Finalmente, se aprovechó esta configuración para obtener una shell como root, completando la escalada de privilegios.
